@@ -8,9 +8,10 @@ df = pd.read_json("data/raw/dataset_Movies_And_TV.json", lines = True)
 print("Reading dataset completed")
 
 # Keep Only Useful Columns
-df= df[['reviewText', 'overall', 'reviewTime', 'asin']]
+df= df[['reviewText', 'overall', 'reviewTime', 'asin','title']]
 df.rename(columns={'overall' : 'rating'}, inplace=True)
 
+'''
 # Reading the metadata file , it didnt wanna be read using pandas read_json() because its not true json so we gonna use this method
 import ast
 path = r"data/raw/meta_Movies_And_TV.json"
@@ -28,7 +29,7 @@ print(meta.isna().sum())
 # JOIN metadata and the review dataset
 df = df.merge(meta ,on='asin' , how='left')
 print("Merging completed")
-
+'''
 # Replace Null titles with "Unknown Product"
 df["title"] = df["title"].fillna("Unknown Product")
 
