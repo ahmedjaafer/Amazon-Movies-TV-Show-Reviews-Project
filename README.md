@@ -40,6 +40,7 @@ The project uses:
 The review dataset was merged with product metadata to enrich the analysis.
 
 Both the dataset and its metadata were downloaded from the UCSD website : https://cseweb.ucsd.edu/~jmcauley/datasets/amazon/links.html
+**Note:** The original Amazon Movies & TV Reviews dataset is not included in this repository due to its large size. It can be downloaded from the original source and placed in the data/raw/ directory before running the project.
 
 ---
 
